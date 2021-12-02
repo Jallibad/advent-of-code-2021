@@ -1,0 +1,103 @@
+name:                advent-of-code
+version:             0.1.0.0
+github:              "jallibad/advent-of-code-2021"
+
+data-files:
+  data/*.txt
+
+extra-source-files:
+  - README.md
+
+description:         Please see the README on GitHub at <https://github.com/jallibad/advent-of-code-2021#readme>
+
+ghc-options:
+  - -Wall
+  - -fno-warn-tabs
+  - -Werror
+  - -Wmissing-deriving-strategies
+
+default-extensions:
+  - TupleSections
+  - LambdaCase
+  - MultiWayIf
+  - TypeOperators
+  - OverloadedStrings
+  - OverloadedLists
+  - ViewPatterns
+  - PatternSynonyms
+  - ExplicitForAll
+  - TypeApplications
+  - ScopedTypeVariables
+  - RankNTypes
+  - LiberalTypeSynonyms
+  - NamedFieldPuns
+  - RecordWildCards
+  - FlexibleInstances
+  - FlexibleContexts
+  - DeriveFunctor
+  - DeriveFoldable
+  - DeriveTraversable
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - ConstrainedClassMethods
+  - MultiParamTypeClasses
+  - FunctionalDependencies
+  - DeriveGeneric
+  - NamedWildCards
+  - PartialTypeSignatures
+  - ExistentialQuantification
+  - GADTSyntax
+  - GADTs
+  - TypeFamilies
+  - TypeFamilyDependencies
+  - AllowAmbiguousTypes
+  - KindSignatures
+  - ConstraintKinds
+  - DataKinds
+  - PolyKinds
+  - TypeInType
+  - EmptyCase
+  - StandaloneDeriving
+  - DefaultSignatures
+  - DeriveAnyClass
+  - DerivingStrategies
+  - DisambiguateRecordFields
+  - DuplicateRecordFields
+  - OverloadedLabels
+  - BangPatterns
+  - ApplicativeDo
+  - NegativeLiterals
+  - NumDecimals
+  - BinaryLiterals
+  - QuasiQuotes
+  - UnicodeSyntax
+  - NoMonomorphismRestriction
+  - PostfixOperators
+  - PackageImports
+  - StandaloneKindSignatures
+
+executables:
+  Question1:
+    main: Main.hs
+    dependencies:
+      - base
+    source-dirs: app/question1/
+  Question2:
+    main: Main.hs
+    dependencies:
+      - base
+    source-dirs: app/question2/
+  Question3:
+    main: Main.hs
+    dependencies:
+      - base
+      - lens
+      - megaparsec
+    source-dirs: app/question3/
+  Question4:
+    main: Main.hs
+    dependencies:
+      - base
+      - lens
+      - megaparsec
+    source-dirs: app/question4/
