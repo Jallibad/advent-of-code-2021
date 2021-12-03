@@ -23,3 +23,15 @@ cradle:
 
     - path: "./app/question4/Paths_advent_of_code.hs"
       component: "advent-of-code:exe:Question4"
+
+    - path: "./app/question5/Main.hs"
+      component: "advent-of-code:exe:Question5"
+
+    - path: "./app/question5/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question5"
+
+    - path: "./app/question6/Main.hs"
+      component: "advent-of-code:exe:Question6"
+
+    - path: "./app/question6/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question6"

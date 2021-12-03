@@ -1,0 +1,246 @@
+	Thu Dec 02 19:28 2021 Time and Allocation Profiling Report  (Final)
+
+	   Question3.EXE +RTS -N -p -RTS
+
+	total time  =        0.00 secs   (1 ticks @ 1000 us, 16 processors)
+	total alloc =   7,069,144 bytes  (excludes profiling overheads)
+
+COST CENTRE         MODULE                     SRC                                         %time %alloc
+
+courseParser.helper Main                       app\question3\Main.hs:23:11-106             100.0   31.1
+main                Main                       app\question3\Main.hs:(31,1)-(36,106)         0.0    1.7
+decimal             Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32        0.0   12.3
+return              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15          0.0    2.5
+<|>                 Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15          0.0   13.1
+<*                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44          0.0    7.1
+takeWhile_          Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:200:3-21            0.0   22.4
+takeN_              Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:(196,3)-(199,38)    0.0    5.2
+chunkToTokens       Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:192:3-32            0.0    1.4
+
+
+                                                                                                                                                                            individual      inherited
+COST CENTRE                         MODULE                     SRC                                                                                      no.      entries  %time %alloc   %time %alloc
+
+MAIN                                MAIN                       <built-in>                                                                                995           0    0.0    0.0   100.0  100.0
+ CAF                                GHC.IO.FD                  <entire-module>                                                                          1981           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.Conc.Windows           <entire-module>                                                                          1966           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Handle.Text         <entire-module>                                                                          1924           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Handle.Internals    <entire-module>                                                                          1923           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Handle.FD           <entire-module>                                                                          1922           0    0.0    0.5     0.0    0.5
+ CAF                                GHC.IO.Exception           <entire-module>                                                                          1920           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Encoding.CodePage   <entire-module>                                                                          1913           0    0.0    0.0     0.0    0.0
+ CAF                                GHC.IO.Encoding            <entire-module>                                                                          1912           0    0.0    0.0     0.0    0.0
+ CAF                                Data.Text.IO               <entire-module>                                                                          1728           0    0.0    0.0     0.0    0.0
+ CAF                                Data.Text.Array            <entire-module>                                                                          1725           0    0.0    0.0     0.0    0.0
+ CAF                                Data.Text                  <entire-module>                                                                          1724           0    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParsecT_$cfmap    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:159:3-6                                                      1185           0    0.0    0.0     0.0    0.0
+  fmap                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:159:3-13                                                     2025           1    0.0    0.0     0.0    0.0
+ CAF:$fStreamText5                  Text.Megaparsec.Stream     <no location info>                                                                       1269           0    0.0    0.0     0.0    0.0
+  takeWhile_                        Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:200:3-21                                                       2055           1    0.0    0.0     0.0    0.0
+ CAF:$fStreamText7                  Text.Megaparsec.Stream     <no location info>                                                                       1271           0    0.0    0.0     0.0    0.0
+  take1_                            Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:195:3-19                                                       2135           1    0.0    0.0     0.0    0.0
+ CAF:$s$fMonadParsecesParsecT2_rhwa Main                       <no location info>                                                                       1046           0    0.0    0.0     0.0    0.0
+  takeWhile1P                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:355:3-28                                                     2075           1    0.0    0.0     0.0    0.0
+ CAF:courseParser                   Main                       app\question3\Main.hs:22:1-12                                                            1075           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2026           1    0.0    0.0     0.0    0.0
+   <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2027           1    0.0    0.0     0.0    0.0
+    mplus                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:299:3-15                                                     2028           1    0.0    0.0     0.0    0.0
+ CAF:courseParser1                  Main                       <no location info>                                                                       1074           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2117           0    0.0    0.0     0.0    0.0
+   courseParser.helper              Main                       app\question3\Main.hs:23:11-106                                                          2118           1    0.0    0.0     0.0    0.0
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2119           2    0.0    0.0     0.0    0.0
+    <*                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2124           1    0.0    0.0     0.0    0.0
+     >>=                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2125           1    0.0    0.0     0.0    0.0
+    chunkEmpty                      Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2123           1    0.0    0.0     0.0    0.0
+    chunkLength                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2121           1    0.0    0.0     0.0    0.0
+    tokens                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:353:3-18                                                     2120           1    0.0    0.0     0.0    0.0
+ CAF:courseParser10                 Main                       <no location info>                                                                       1035           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2042           0    0.0    0.0     0.0    0.0
+ CAF:courseParser2                  Main                       <no location info>                                                                       1033           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2122           0    0.0    0.0     0.0    0.0
+ CAF:courseParser5                  Main                       <no location info>                                                                       1073           0    0.0    0.0     0.0    0.0
+  <|>                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2032           1    0.0    0.0     0.0    0.0
+   mplus                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:299:3-15                                                     2033           1    0.0    0.0     0.0    0.0
+ CAF:courseParser6                  Main                       <no location info>                                                                       1072           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2094           0    0.0    0.0     0.0    0.0
+   courseParser.helper              Main                       app\question3\Main.hs:23:11-106                                                          2095           1    0.0    0.0     0.0    0.0
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2096           2    0.0    0.0     0.0    0.0
+    <*                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2101           1    0.0    0.0     0.0    0.0
+     >>=                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2102           1    0.0    0.0     0.0    0.0
+    chunkEmpty                      Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2100           1    0.0    0.0     0.0    0.0
+    chunkLength                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2098           1    0.0    0.0     0.0    0.0
+    tokens                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:353:3-18                                                     2097           1    0.0    0.0     0.0    0.0
+ CAF:courseParser7                  Main                       <no location info>                                                                       1034           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2099           0    0.0    0.0     0.0    0.0
+ CAF:courseParser9                  Main                       <no location info>                                                                       1071           0    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2034           0    0.0    0.0     0.0    0.0
+   courseParser.helper              Main                       app\question3\Main.hs:23:11-106                                                          2035           1    0.0    0.0     0.0    0.0
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2036           2    0.0    0.0     0.0    0.0
+    <*                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2066           1    0.0    0.0     0.0    0.0
+     >>=                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2067           1    0.0    0.0     0.0    0.0
+    chunkEmpty                      Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2044           1    0.0    0.0     0.0    0.0
+    chunkLength                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2041           1    0.0    0.0     0.0    0.0
+    tokens                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:353:3-18                                                     2039           1    0.0    0.0     0.0    0.0
+ CAF:getBinDir9                     Paths_advent_of_code       <no location info>                                                                       1002           0    0.0    0.0     0.0    0.0
+  catchIO                           Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:26:1-25        1994           1    0.0    0.0     0.0    0.0
+ CAF:getDataDir1                    Paths_advent_of_code       <no location info>                                                                       1017           0    0.0    0.0     0.0    0.0
+  getDataDir                        Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:43:1-77        1993           1    0.0    0.0     0.0    0.0
+ CAF:getDataDir4                    Paths_advent_of_code       <no location info>                                                                       1016           0    0.0    0.2     0.0    0.2
+ CAF:getDataDir7                    Paths_advent_of_code       <no location info>                                                                       1015           0    0.0    0.0     0.0    0.0
+ CAF:k_rhwE                         Main                       <no location info>                                                                       1067           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2045           0    0.0    0.0     0.0    0.0
+   >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2046           1    0.0    0.0     0.0    0.0
+ CAF:lvl11_r1y7o                    Text.Megaparsec.Char.Lexer <no location info>                                                                       1094           0    0.0    0.0     0.0    0.0
+ CAF:lvl30_rhwe                     Main                       <no location info>                                                                       1050           0    0.0    0.0     0.0    0.0
+  label                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:345:3-16                                                     2072           1    0.0    0.0     0.0    0.0
+ CAF:lvl48_rhwy                     Main                       <no location info>                                                                       1062           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2053           0    0.0    0.0     0.0    0.0
+   takeWhile1P                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:355:3-28                                                     2054           1    0.0    0.0     0.0    0.0
+ CAF:lvl49_rhwz                     Main                       <no location info>                                                                       1063           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2052           0    0.0    0.0     0.0    0.0
+ CAF:lvl50_rhwA                     Main                       <no location info>                                                                       1064           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2051           0    0.0    0.0     0.0    0.0
+ CAF:lvl51_rhwB                     Main                       <no location info>                                                                       1065           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2060           0    0.0    0.0     0.0    0.0
+   pure                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2061           1    0.0    0.0     0.0    0.0
+ CAF:lvl52_rhwC                     Main                       <no location info>                                                                       1066           0    0.0    0.0     0.0    0.0
+  <|>                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2047           1    0.0    0.0     0.0    0.0
+   mplus                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:299:3-15                                                     2048           1    0.0    0.0     0.0    0.0
+ CAF:lvl53_rhwH                     Main                       <no location info>                                                                       1069           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2081           0    0.0    0.0     0.0    0.0
+   <*                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2082           0    0.0    0.0     0.0    0.0
+ CAF:lvl54_rhwI                     Main                       <no location info>                                                                       1070           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2070           0    0.0    0.0     0.0    0.0
+   decimal                          Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32                                                   2071           1    0.0    0.0     0.0    0.0
+ CAF:lvl55_rhwK                     Main                       <no location info>                                                                       1076           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2024           0    0.0    0.0     0.0    0.0
+ CAF:lvl56_rhwL                     Main                       <no location info>                                                                       1077           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2019           0    0.0    0.0     0.0    0.0
+   <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2020           1    0.0    0.0     0.0    0.0
+    mplus                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:299:3-15                                                     2021           1    0.0    0.0     0.0    0.0
+ CAF:lvl7_rsEN                      Text.Megaparsec.Stream     <no location info>                                                                       1272           0    0.0    0.0     0.0    0.0
+  chunkToTokens                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:192:3-32                                                       2160           1    0.0    0.0     0.0    0.0
+ CAF:lvl_rhvh                       Main                       <no location info>                                                                       1030           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2128           0    0.0    0.0     0.0    0.0
+   pure                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2129           1    0.0    0.0     0.0    0.0
+ CAF:main1                          Main                       <no location info>                                                                       1080           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    1990           1    0.0    0.0     0.0    0.0
+ CAF:main4                          Main                       <no location info>                                                                       1079           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2010           0    0.0    0.0     0.0    0.0
+   <*                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2011           1    0.0    0.0     0.0    0.0
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2012           1    0.0    0.0     0.0    0.0
+ CAF:main5                          Main                       <no location info>                                                                       1029           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2132           0    0.0    0.0     0.0    0.0
+   eof                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:351:3-12                                                     2133           1    0.0    0.0     0.0    0.0
+ CAF:main7                          Main                       <no location info>                                                                       1078           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2016           0    0.0    0.0     0.0    0.0
+   >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2017           1    0.0    0.0     0.0    0.0
+ CAF:main9                          Main                       <no location info>                                                                       1032           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    1999           0    0.0    0.0     0.0    0.0
+   getDataFileName                  Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:(48,1)-(50,30) 2000           0    0.0    0.0     0.0    0.0
+ CAF:main_name                      Main                       <no location info>                                                                       1031           0    0.0    0.0     0.0    0.0
+  main                              Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    2001           0    0.0    0.0     0.0    0.0
+   main.relativeFileName            Main                       app\question3\Main.hs:32:9-53                                                            2002           1    0.0    0.0     0.0    0.0
+ CAF:p2_rhwG                        Main                       <no location info>                                                                       1068           0    0.0    0.0     0.0    0.0
+  courseParser.helper               Main                       app\question3\Main.hs:23:11-106                                                          2083           0    0.0    0.0     0.0    0.0
+   >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2084           1    0.0    0.0     0.0    0.0
+ CAF:parse                          Text.Megaparsec            Text\Megaparsec.hs:185:1-5                                                               1084           0    0.0    0.0     0.0    0.0
+  parse                             Text.Megaparsec            Text\Megaparsec.hs:185:1-17                                                              2004           1    0.0    0.0     0.0    0.0
+ main                               Main                       app\question3\Main.hs:(31,1)-(36,106)                                                    1991           0    0.0    1.7   100.0   99.2
+  unParser                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2018         922    0.0    0.0     0.0    0.0
+  readTextDevice                    Data.Text.Internal.IO      libraries\text\src\Data\Text\Internal\IO.hs:133:39-64                                    2003           5    0.0    0.0     0.0    0.0
+  getDataFileName                   Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:(48,1)-(50,30) 1992           1    0.0    0.1     0.0    0.2
+   getDataDir                       Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:43:1-77        1995           0    0.0    0.0     0.0    0.0
+    catchIO                         Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:26:1-25        1996           0    0.0    0.0     0.0    0.0
+     datadir                        Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:35:1-176       1998           1    0.0    0.0     0.0    0.0
+     getDataDir.\                   Paths_advent_of_code       .stack-work\dist\274b403a\build\Question3\autogen\Paths_advent_of_code.hs:43:63-76       1997           1    0.0    0.0     0.0    0.0
+  main.(...)                        Main                       app\question3\Main.hs:36:30-89                                                           2158           1    0.0    0.3     0.0    1.6
+   navigate                         Main                       app\question3\Main.hs:(26,1)-(28,42)                                                     2159        1000    0.0    0.5     0.0    1.3
+    #.                              Data.Profunctor.Unsafe     src\Data\Profunctor\Unsafe.hs:175:3-71                                                   2162        2000    0.0    0.0     0.0    0.8
+     #..\                           Data.Profunctor.Unsafe     src\Data\Profunctor\Unsafe.hs:175:26-31                                                  2163        2000    0.0    0.8     0.0    0.8
+  main.d                            Main                       app\question3\Main.hs:36:30-89                                                           2164           1    0.0    0.0     0.0    0.0
+  main.h                            Main                       app\question3\Main.hs:36:30-89                                                           2157           1    0.0    0.0     0.0    0.0
+  runParser                         Text.Megaparsec            Text\Megaparsec.hs:234:1-61                                                              2005           1    0.0    0.0     0.0    0.0
+   initialState                     Text.Megaparsec            Text\Megaparsec.hs:(296,1)-(309,5)                                                       2040           1    0.0    0.0     0.0    0.0
+   runParser'                       Text.Megaparsec            Text\Megaparsec.hs:248:1-42                                                              2006           1    0.0    0.0     0.0    0.0
+    runParserT'                     Text.Megaparsec            Text\Megaparsec.hs:(278,1)-(292,54)                                                      2007           1    0.0    0.0     0.0    0.0
+     runParsecT                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(653,1)-(658,54)                                             2008           1    0.0    0.0     0.0    0.0
+      unParser                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2009           1    0.0    0.0     0.0    0.0
+     stateParseErrors               Text.Megaparsec.State      Text\Megaparsec\State.hs:52:5-20                                                         2156           1    0.0    0.0     0.0    0.0
+  <*                                Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2013           0    0.0    0.0     0.0    0.0
+   >>=                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2014           1    0.0    0.0     0.0    0.0
+    unParser                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2015           1    0.0    0.0     0.0    0.0
+   return                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2144           1    0.0    0.0     0.0    0.0
+    pure                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2145           1    0.0    0.0     0.0    0.0
+   unParser                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2131           1    0.0    0.0     0.0    0.0
+  <|>                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2022           0    0.0    0.7     0.0    0.7
+   unParser                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2023         921    0.0    0.0     0.0    0.0
+  courseParser                      Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2029           0    0.0    0.0   100.0   95.0
+   <|>                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2030           0    0.0    1.5     0.0    1.5
+    unParser                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2031        1842    0.0    0.0     0.0    0.0
+   courseParser.helper              Main                       app\question3\Main.hs:23:11-106                                                          2037           0  100.0   31.1   100.0   93.5
+    unParser                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2038       18578    0.0    0.0     0.0    0.0
+    chunkEmpty                      Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2057        4000    0.0    0.0     0.0    0.0
+    chunkLength                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2059        2000    0.0    0.5     0.0    0.5
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2058        1839    0.0    0.0     0.0    0.0
+    return                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2062        1839    0.0    0.0     0.0    0.0
+     pure                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2063        1839    0.0    0.0     0.0    0.0
+    takeN_                          Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:(196,3)-(199,38)                                               2043        1812    0.0    5.2     0.0    5.2
+    <*                              Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2068           0    0.0    1.6     0.0    2.8
+     unParser                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2069        1998    0.0    0.0     0.0    0.0
+     decimal                        Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32                                                   2107           0    0.0    0.8     0.0    1.2
+      unParser                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2108         390    0.0    0.0     0.0    0.0
+      >>=                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2111          78    0.0    0.0     0.0    0.0
+      chunkEmpty                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2110          78    0.0    0.0     0.0    0.0
+      chunkLength                   Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2112          78    0.0    0.0     0.0    0.0
+      return                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2114          78    0.0    0.0     0.0    0.0
+       pure                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2115          78    0.0    0.0     0.0    0.0
+      takeWhile_                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:200:3-21                                                       2109           0    0.0    0.4     0.0    0.4
+    <|>                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2049           0    0.0   10.9     0.0   20.0
+     unParser                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2050       10100    0.0    0.0     0.0    0.0
+     return                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2064         162    0.0    2.5     0.0    9.1
+      unParser                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2065        1000    0.0    0.0     0.0    0.0
+      pure                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2087         162    0.0    0.0     0.0    0.0
+      <*                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2088           0    0.0    2.9     0.0    6.6
+       unParser                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2090         924    0.0    0.0     0.0    0.0
+       >>=                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2093           2    0.0    0.0     0.0    0.0
+        unParser                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2130           2    0.0    0.0     0.0    0.0
+       decimal                      Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32                                                   2089           0    0.0    3.6     0.0    3.6
+        unParser                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2113        2071    0.0    0.0     0.0    0.0
+        >>=                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2116         996    0.0    0.0     0.0    0.0
+      decimal                       Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32                                                   2103           0    0.0    0.0     0.0    0.0
+       unParser                     Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2126           2    0.0    0.0     0.0    0.0
+       >>=                          Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2127           1    0.0    0.0     0.0    0.0
+       <*                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2104           0    0.0    0.0     0.0    0.0
+        unParser                    Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2105           4    0.0    0.0     0.0    0.0
+        >>=                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2106           1    0.0    0.0     0.0    0.0
+     >>=                            Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2086         161    0.0    0.0     0.0    0.0
+    decimal                         Text.Megaparsec.Char.Lexer Text\Megaparsec\Char\Lexer.hs:363:1-32                                                   2073           0    0.0    7.9     0.0   17.1
+     unParser                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2074        1844    0.0    0.0     0.0    0.0
+     chunkEmpty                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:194:3-27                                                       2077         922    0.0    0.0     0.0    0.0
+     chunkLength                    Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:193:3-30                                                       2085         922    0.0    0.2     0.0    0.2
+     <*                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2078           0    0.0    2.6     0.0    2.6
+      unParser                      Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2079        1846    0.0    0.0     0.0    0.0
+      >>=                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2080         922    0.0    0.0     0.0    0.0
+      return                        Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2091         922    0.0    0.0     0.0    0.0
+       pure                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:168:3-14                                                     2092         922    0.0    0.0     0.0    0.0
+     chunkToTokens                  Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:192:3-32                                                       2161           0    0.0    1.4     0.0    1.4
+     takeWhile_                     Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:200:3-21                                                       2076           0    0.0    5.0     0.0    5.0
+    takeWhile_                      Text.Megaparsec.Stream     Text\Megaparsec\Stream.hs:200:3-21                                                       2056           0    0.0   17.0     0.0   17.0
+  eof                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:351:3-12                                                     2134           0    0.0    0.0     0.0    0.0
+   <*                               Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:171:3-44                                                     2137           0    0.0    0.0     0.0    0.0
+    >>=                             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:210:3-15                                                     2142           0    0.0    0.0     0.0    0.0
+     unParser                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:125:5-12                                                     2143           1    0.0    0.0     0.0    0.0
+     return                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2147           0    0.0    0.0     0.0    0.0
+      courseParser                  Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2148           0    0.0    0.0     0.0    0.0
+       courseParser.helper          Main                       app\question3\Main.hs:23:11-106                                                          2149           0    0.0    0.0     0.0    0.0
+        <|>                         Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2150           0    0.0    0.0     0.0    0.0
+     runParser                      Text.Megaparsec            Text\Megaparsec.hs:234:1-61                                                              2151           0    0.0    0.0     0.0    0.0
+      runParser'                    Text.Megaparsec            Text\Megaparsec.hs:248:1-42                                                              2152           0    0.0    0.0     0.0    0.0
+       runParserT'                  Text.Megaparsec            Text\Megaparsec.hs:(278,1)-(292,54)                                                      2153           0    0.0    0.0     0.0    0.0
+        runParsecT                  Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:(653,1)-(658,54)                                             2154           0    0.0    0.0     0.0    0.0
+         runParsecT.cok             Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:655:5-50                                                     2155           1    0.0    0.0     0.0    0.0
+    courseParser                    Main                       app\question3\Main.hs:(22,1)-(23,106)                                                    2138           0    0.0    0.0     0.0    0.0
+     courseParser.helper            Main                       app\question3\Main.hs:23:11-106                                                          2139           0    0.0    0.0     0.0    0.0
+      <|>                           Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:205:3-15                                                     2140           0    0.0    0.0     0.0    0.0
+       return                       Text.Megaparsec.Internal   Text\Megaparsec\Internal.hs:209:3-15                                                     2141           0    0.0    0.0     0.0    0.0

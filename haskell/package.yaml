@@ -5,11 +5,6 @@ github:              "jallibad/advent-of-code-2021"
 data-files:
   data/*.txt
 
-extra-source-files:
-  - README.md
-
-description:         Please see the README on GitHub at <https://github.com/jallibad/advent-of-code-2021#readme>
-
 ghc-options:
   - -Wall
   - -fno-warn-tabs
@@ -81,11 +76,21 @@ executables:
     main: Main.hs
     dependencies:
       - base
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     source-dirs: app/question1/
   Question2:
     main: Main.hs
     dependencies:
       - base
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     source-dirs: app/question2/
   Question3:
     main: Main.hs
@@ -93,6 +98,12 @@ executables:
       - base
       - lens
       - megaparsec
+      - text
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     source-dirs: app/question3/
   Question4:
     main: Main.hs
@@ -100,4 +111,38 @@ executables:
       - base
       - lens
       - megaparsec
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     source-dirs: app/question4/
+  Question5:
+    main: Main.hs
+    dependencies:
+      - base
+      - lens
+      - megaparsec
+      - typelits-printf
+      - vector
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app/question5/
+  Question6:
+    main: Main.hs
+    dependencies:
+      - base
+      - lens
+      - megaparsec
+      - typelits-printf
+      - vector
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -freduction-depth=0
+    source-dirs: app/question6/
