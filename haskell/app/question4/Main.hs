@@ -5,8 +5,9 @@ module Main where
 import Control.Lens ((^.), (+~), (-~), makeLenses)
 import Data.Foldable (Foldable (foldl'))
 import Data.Void (Void)
+import Parsing (runParser)
 import Paths_advent_of_code (getDataFileName)
-import Text.Megaparsec (MonadParsec (eof), Parsec, (<|>), errorBundlePretty, many, parse)
+import Text.Megaparsec (MonadParsec (eof), Parsec, (<|>), many)
 import Text.Megaparsec.Char (space1, string)
 import Text.Megaparsec.Char.Lexer (decimal)
 
@@ -28,6 +29,6 @@ main :: IO ()
 main = do
     let relativeFileName = "data/question3-input.txt"
     file <- getDataFileName relativeFileName >>= readFile
-    case parse (many courseParser <* eof) relativeFileName file of
-        Left parseError -> putStrLn $ errorBundlePretty parseError
-        Right courses -> let Position h d _ = foldl' navigate (Position 0 0 0) courses in print $ h * d
+    courses <- runParser (many courseParser <* eof) relativeFileName file
+    let Position h d _ = foldl' navigate (Position 0 0 0) courses
+    print $ h * d

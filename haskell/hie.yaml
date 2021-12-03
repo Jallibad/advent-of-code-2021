@@ -1,5 +1,8 @@
 cradle:
   stack:
+    - path: "./src/"
+      component: "advent-of-code:lib"
+
     - path: "./app/question1/Main.hs"
       component: "advent-of-code:exe:Question1"
 

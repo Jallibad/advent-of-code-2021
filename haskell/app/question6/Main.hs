@@ -9,8 +9,9 @@ import Data.Vector.Unboxed (Vector, (!))
 import qualified Data.Vector.Unboxed as V (foldl', fromList, replicate, zipWith)
 import Data.Void (Void)
 import GHC.TypeLits.Printf (printf)
+import Parsing (runParser)
 import Paths_advent_of_code (getDataFileName)
-import Text.Megaparsec (ErrorFancy(ErrorFail), MonadParsec(eof, takeWhileP), Parsec, errorBundlePretty, fancyFailure, many, parse)
+import Text.Megaparsec (ErrorFancy(ErrorFail), MonadParsec(eof, takeWhileP), Parsec, fancyFailure, many)
 import Text.Megaparsec.Char (space1)
 
 data Statistics = Statistics {_totalPoints :: !Int, _counts :: !(Vector Int)}
@@ -36,11 +37,6 @@ lineParser expectedLineLength = do
 
 binaryToDecimal :: Vector Bool -> Int
 binaryToDecimal = V.foldl' (\t b -> t * 2 + if b then 1 else 0) 0
-
-runParser :: Parsec Void String a -> String -> String -> IO a
-runParser parser fileName = either (fail . errorBundlePretty) return . parse parser fileName
-
-type BitCriteria = Int -> [Vector Bool] -> [Vector Bool]
 
 main :: IO ()
 main = do
