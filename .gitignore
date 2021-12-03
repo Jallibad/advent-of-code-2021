@@ -1,3 +1,9 @@
 haskell/.stack-work/
+**/.bloop/
+scala/.bsp/
+scala/.metals/
+scala/.vscode/
+scala/**/target/
+scala/**/metals.sbt
 *.cabal
 *~
