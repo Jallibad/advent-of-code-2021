@@ -164,6 +164,7 @@ executables:
       - base
       - lens
       - megaparsec
+      - mtl
       - typelits-printf
       - vector
     ghc-options:
