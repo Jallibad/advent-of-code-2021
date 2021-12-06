@@ -166,7 +166,6 @@ executables:
       - megaparsec
       - mtl
       - typelits-printf
-      - vector
     ghc-options:
       - -O2
       - -threaded
@@ -184,7 +183,6 @@ executables:
       - megaparsec
       - mtl
       - typelits-printf
-      - vector
     ghc-options:
       - -O2
       - -threaded
@@ -196,14 +194,11 @@ executables:
     main: Main.hs
     dependencies:
       - advent-of-code
-      - array
       - base
       - containers
       - lens
       - megaparsec
-      - mtl
       - typelits-printf
-      - vector
     ghc-options:
       - -O2
       - -threaded
@@ -215,14 +210,11 @@ executables:
     main: Main.hs
     dependencies:
       - advent-of-code
-      - array
       - base
       - containers
       - lens
       - megaparsec
-      - mtl
       - typelits-printf
-      - vector
     ghc-options:
       - -O2
       - -threaded
@@ -230,3 +222,33 @@ executables:
       - -with-rtsopts=-N
       - -freduction-depth=0
     source-dirs: app/question10/
+  Question11:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - base
+      - containers
+      - lens
+      - megaparsec
+      - mtl
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app/question11/
+  Question12:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - base
+      - containers
+      - lens
+      - megaparsec
+      - mtl
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app/question12/

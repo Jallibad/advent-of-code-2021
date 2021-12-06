@@ -16,7 +16,7 @@ import Text.Megaparsec (MonadParsec(eof), Parsec, many)
 import Text.Megaparsec.Char (space1, string)
 import Text.Megaparsec.Char.Lexer (decimal)
 
-data Point = Point {_x :: Int, _y :: Int}
+data Point = Point {_x :: !Int, _y :: !Int}
     deriving stock Eq
     deriving stock Ord
 $(makeLenses ''Point)
@@ -27,7 +27,7 @@ instance Show Point where
 pointParser :: Parsec Void String Point
 pointParser = liftA2 Point (decimal <* string ",") decimal <* many space1
 
-data LineSegment = LineSegment {_point1 :: Point, _point2 :: Point}
+data LineSegment = LineSegment {_point1 :: !Point, _point2 :: !Point}
 $(makeLenses ''LineSegment)
 
 instance Show LineSegment where
