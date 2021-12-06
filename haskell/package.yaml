@@ -174,3 +174,21 @@ executables:
       - -with-rtsopts=-N
       - -freduction-depth=0
     source-dirs: app/question7/
+  Question8:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - array
+      - base
+      - lens
+      - megaparsec
+      - mtl
+      - typelits-printf
+      - vector
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -freduction-depth=0
+    source-dirs: app/question8/

@@ -44,3 +44,9 @@ cradle:
 
     - path: "./app/question7/Paths_advent_of_code.hs"
       component: "advent-of-code:exe:Question7"
+
+    - path: "./app/question8/Main.hs"
+      component: "advent-of-code:exe:Question8"
+
+    - path: "./app/question8/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question8"

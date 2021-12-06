@@ -5,8 +5,7 @@ module Main where
 import Control.Lens (Each(each), Fold, (%=), (.=), (^.), allOf, filtered, folding, makeLenses, mapped, productOf, sumOf, use)
 import Control.Monad.State.Lazy (MonadState, runState)
 import Data.Array (Array, (!), elems, listArray)
-import Data.Foldable (find)
-import Data.List (uncons)
+import Data.List ((\\), uncons)
 import Data.Void (Void)
 import GHC.TypeLits.Printf (printf)
 import Parsing (runParser)
@@ -19,6 +18,7 @@ size :: (Int, Int)
 size = (5, 5)
 
 data BingoCell = BingoCell {_isFilled :: !Bool, _number :: !Int}
+    deriving stock Eq
 $(makeLenses ''BingoCell)
 
 fillIfCalled :: Int -> BingoCell -> BingoCell
@@ -29,6 +29,7 @@ instance Show BingoCell where
     show (BingoCell filled n) = printf @"%c%-.2d" (if filled then 'F' else ' ') n
 
 newtype BingoBoard = BingoBoard (Array (Int, Int) BingoCell)
+    deriving newtype Eq
     deriving newtype Show
 
 allCells :: Fold BingoBoard BingoCell
@@ -58,22 +59,27 @@ boardParser = do
     cells <- count totalCells $ decimal <* space1
     return $ BingoBoard $ listArray ((1,1), size) $ BingoCell False <$> cells
 
+firstCell :: BingoBoard -> BingoCell
+firstCell (BingoBoard board) = board ! (1,1)
+
 data BingoGame = BingoGame {_numbers :: ![Int], _boards :: ![BingoBoard]}
     deriving stock Show
 $(makeLenses ''BingoGame)
 
-callNumber :: MonadState BingoGame m => m (Maybe Int)
-callNumber = use numbers >>= maybe (return Nothing) applyCalledNumber . uncons
+callNumber :: MonadState BingoGame m => m (Maybe Int, [BingoBoard])
+callNumber = use numbers >>= maybe (return (Nothing, [])) applyCalledNumber . uncons
     where applyCalledNumber (numberToCall, remainingNumbers) = do
                 numbers .= remainingNumbers
-                boards . mapped %= fillCells numberToCall
-                return $ Just numberToCall
+                alreadyCompletedBoards <- filter boardIsComplete <$> use boards
+                boards . mapped . filtered (not . boardIsComplete) %= fillCells numberToCall
+                finallyCompletedBoards <- filter boardIsComplete <$> use boards
+                return (Just numberToCall, finallyCompletedBoards \\ alreadyCompletedBoards)
 
 gameIsComplete :: BingoGame -> Bool
-gameIsComplete game = any boardIsComplete $ game ^. boards
+gameIsComplete game = all boardIsComplete $ game ^. boards
 
-runGameUntilComplete :: BingoGame -> (Maybe Int, BingoGame)
-runGameUntilComplete = until (gameIsComplete . snd) (runState callNumber . snd) . (Nothing,)
+runGameUntilComplete :: BingoGame -> ((Maybe Int, [BingoBoard]), BingoGame)
+runGameUntilComplete = until (gameIsComplete . snd) (runState callNumber . snd) . ((Nothing, []),)
 
 gameParser :: Parsec Void String BingoGame
 gameParser = do
@@ -87,6 +93,5 @@ main = do
     let relativeFileName = "data/question7-input.txt"
     file <- getDataFileName relativeFileName >>= readFile
     game <- runParser gameParser relativeFileName file
-    let (Just lastCalledNumber, completedGame) = runGameUntilComplete game
-    let Just winningBoard = find boardIsComplete $ completedGame ^. boards
-    print $ sumOfUnfilledCells winningBoard * lastCalledNumber
+    let ((Just lastCalledNumber, [lastCompletedBoard]), _) = runGameUntilComplete game
+    print $ sumOfUnfilledCells lastCompletedBoard * lastCalledNumber
