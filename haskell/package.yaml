@@ -211,3 +211,22 @@ executables:
       - -with-rtsopts=-N
       - -freduction-depth=0
     source-dirs: app/question9/
+  Question10:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - array
+      - base
+      - containers
+      - lens
+      - megaparsec
+      - mtl
+      - typelits-printf
+      - vector
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -freduction-depth=0
+    source-dirs: app/question10/

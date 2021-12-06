@@ -9,6 +9,12 @@ cradle:
     - path: "./app/question1/Paths_advent_of_code.hs"
       component: "advent-of-code:exe:Question1"
 
+    - path: "./app/question10/Main.hs"
+      component: "advent-of-code:exe:Question10"
+
+    - path: "./app/question10/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question10"
+
     - path: "./app/question2/Main.hs"
       component: "advent-of-code:exe:Question2"
 
