@@ -6,70 +6,72 @@ data-files:
   data/*.txt
 
 ghc-options:
-  - -Wall
   - -fno-warn-tabs
+  - -Wall
   - -Werror
   - -Wmissing-deriving-strategies
+  - -Wredundant-constraints
 
 default-extensions:
-  - TupleSections
-  - LambdaCase
-  - MultiWayIf
-  - TypeOperators
-  - OverloadedStrings
-  - OverloadedLists
-  - ViewPatterns
-  - PatternSynonyms
-  - ExplicitForAll
-  - TypeApplications
-  - ScopedTypeVariables
-  - RankNTypes
-  - LiberalTypeSynonyms
-  - NamedFieldPuns
-  - RecordWildCards
-  - FlexibleInstances
-  - FlexibleContexts
-  - DeriveFunctor
-  - DeriveFoldable
-  - DeriveTraversable
-  - GeneralizedNewtypeDeriving
-  - InstanceSigs
-  - ConstrainedClassMethods
-  - MultiParamTypeClasses
-  - FunctionalDependencies
-  - DeriveGeneric
-  - NamedWildCards
-  - PartialTypeSignatures
-  - ExistentialQuantification
-  - GADTSyntax
-  - GADTs
-  - TypeFamilies
-  - TypeFamilyDependencies
   - AllowAmbiguousTypes
-  - KindSignatures
+  - ApplicativeDo
+  - BangPatterns
+  - BinaryLiterals
+  - ConstrainedClassMethods
   - ConstraintKinds
   - DataKinds
-  - PolyKinds
-  - TypeInType
-  - EmptyCase
-  - StandaloneDeriving
   - DefaultSignatures
   - DeriveAnyClass
-  - DerivingStrategies
-  - DisambiguateRecordFields
+  - DeriveGeneric
+  - DeriveLift
+  - DeriveTraversable
+  - DerivingVia
   - DuplicateRecordFields
-  - OverloadedLabels
-  - BangPatterns
-  - ApplicativeDo
+  - EmptyCase
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - HexFloatLiterals
+  - InstanceSigs
+  - LambdaCase
+  - LiberalTypeSynonyms
+  - MonadComprehensions
+  - MultiWayIf
+  - NamedFieldPuns
+  - NamedWildCards
   - NegativeLiterals
-  - NumDecimals
-  - BinaryLiterals
-  - QuasiQuotes
-  - UnicodeSyntax
   - NoMonomorphismRestriction
-  - PostfixOperators
+  - NumDecimals
+  - NumericUnderscores
+  - OverloadedLabels
+  - OverloadedLists
+  - OverloadedStrings
   - PackageImports
+  - ParallelListComp
+  - PartialTypeSignatures
+  - PatternSynonyms
+  - PolyKinds
+  - PostfixOperators
+  - QuantifiedConstraints
+  - QuasiQuotes
+  - RankNTypes
+  - RecordWildCards
+  - RecursiveDo
+  - RoleAnnotations
+  - ScopedTypeVariables
+  - StandaloneDeriving
   - StandaloneKindSignatures
+  - TupleSections
+  - TypeApplications
+  - TypeFamilyDependencies
+  - TypeOperators
+  - UnboxedSums
+  - UnicodeSyntax
+  - UnliftedNewtypes
+  - ViewPatterns
 
 library:
   source-dirs: src/
