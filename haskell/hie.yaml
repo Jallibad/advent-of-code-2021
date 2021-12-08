@@ -27,6 +27,18 @@ cradle:
     - path: "./app/question12/Paths_advent_of_code.hs"
       component: "advent-of-code:exe:Question12"
 
+    - path: "./app/question13/Main.hs"
+      component: "advent-of-code:exe:Question13"
+
+    - path: "./app/question13/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question13"
+
+    - path: "./app/question14/Main.hs"
+      component: "advent-of-code:exe:Question14"
+
+    - path: "./app/question14/Paths_advent_of_code.hs"
+      component: "advent-of-code:exe:Question14"
+
     - path: "./app/question2/Main.hs"
       component: "advent-of-code:exe:Question2"
 

@@ -252,3 +252,29 @@ executables:
       - -rtsopts
       - -with-rtsopts=-N
     source-dirs: app/question12/
+  Question13:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - base
+      - containers
+      - megaparsec
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app/question13/
+  Question14:
+    main: Main.hs
+    dependencies:
+      - advent-of-code
+      - base
+      - containers
+      - megaparsec
+    ghc-options:
+      - -O2
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: app/question14/
